@@ -1,6 +1,6 @@
 ---
-title: "Filippo Gambarota CV"
-author: Filippo Gambarota
+title: "Mattia Doro CV"
+author: Mattia Doro
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:    
@@ -36,14 +36,14 @@ bib <- prepare_bib(bib)
 Aside
 ================================================================================
 
-![Filippo Gambarota](img/photo.jpg){width=60%}
+![Mattia Doro](img/photo.jpg){width=60%}
 
 Contact Info {#contact}
 --------------------------------------------------------------------------------
 
-- <i class="fa fa-envelope"></i> filippo.gambarota@gmail.com
-- <i class="fa fa-envelope"></i> filippo.gambarota@phd.unipd.it
-- <i class="fa fa-globe"></i> [filippogambarota.xyz](https://filippogambarota.xyz/)
+- <i class="fa fa-envelope"></i> mattia.doro@gmail.com
+- <i class="fa fa-envelope"></i> mattia.doro@.unipd.it
+<!-- - <i class="fa fa-globe"></i> [filippogambarota.xyz](https://filippogambarota.xyz/) -->
 
 ::: social
 
@@ -56,10 +56,10 @@ format_social(cv_data$links, 2) %>%
 Skills {#skills}
 --------------------------------------------------------------------------------
 
-- **Coding**: R, MATLAB, Python, GIT, Bash
-- **Markup**: Latex, Markdown, HTML, CSS
-- **Experiments**: E-Prime, Psychtoolbox, Presentation, Psychopy
-- **EEG Analysis**: Brain Vision Analyzer, eeglab/erplab
+- **Coding**: R, MATLAB, Vba, Python, GIT
+- **Markup**: Markdown, HTML, CSS
+- **Experiments**: E-Prime, Psychopy
+- **EEG Analysis**: Brain Vision Analyzer, EEGLAB/ERPLAB
 - **Operating System**: Linux, Windows
 
 Language Skills {#language}
@@ -87,14 +87,13 @@ glue::as_glue("[PDF version](cv.pdf)")
 Main
 ================================================================================
 
-Filippo Gambarota {#title}
+Mattia Doro {#title}
 --------------------------------------------------------------------------------
 
-### PhD Student - [University of Padova](www.unipd.it)
+### Post-doctoral fellow - [University of Padova](www.unipd.it)
 
-I'm a Psychologist and PhD student in Psychological Sciences at the University of Padova, supervised by Prof. Paola Sessa. My research
-interests are unconscious processing and the relationship between working memory and consciousness. I am also interested in methodology and statistics, in particular meta-analysis.
-Outside academia, I am a speaker coordinator for TEDx Padova and I am constantly learning how to code in different languages.
+I'm a Cognitive Neuroscientist at the University of Padova. My research
+interests are related to visual attention and visual short-term memory.
 
 Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
@@ -165,19 +164,6 @@ cv_data$other_academic %>%
     format_all(format_edu)
 ```
 
-Volunteering {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-### Speaker Coordinator
-
-[TEDx Padova](http://tedxpadova.org/)
-
-Padova, Italy
-
-2018 - Present
-
-- Organizing the TEDx event
-- Following and supporting the speakers for the talk preparation
 
 ```{css, echo=FALSE}
 
