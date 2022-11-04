@@ -58,8 +58,8 @@ Skills {#skills}
 
 - **Coding**: R, MATLAB, Vba, Python, GIT
 - **Markup**: Markdown, HTML, CSS
-- **Experiments**: E-Prime, Psychopy
-- **EEG Analysis**: Brain Vision Analyzer, EEGLAB/ERPLAB
+- **Experiments**: E-Prime, PsychoPy
+- **EEG Analysis**: Brain Vision Analyzer, EEGLAB/ERPLAB, FieldTrip
 - **Operating System**: Linux, Windows
 
 Language Skills {#language}
@@ -67,13 +67,13 @@ Language Skills {#language}
 
 - **Italian**: native language
 
-- **English**: proficient
+- **English**: fluent
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
 ```{r, eval=params$pdf_mode, results='asis', echo=FALSE}
-glue::as_glue("![Filippo Gambarota](img/signature.png){width=80%}")
+glue::as_glue("![Mattia Doro](img/signature.png){width=80%}")
 ```
 
 Resume made with [**pagedown**](https://github.com/rstudio/pagedown) 
