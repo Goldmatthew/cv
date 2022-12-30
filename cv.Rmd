@@ -9,7 +9,7 @@ output:
     - "style/resume.css"
     - "https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
 params:
-  pdf_mode: FALSE
+  pdf_mode: FALSE 
   html_mode: TRUE
 ---
 
@@ -24,6 +24,7 @@ knitr::opts_chunk$set(echo = FALSE,
 library(tidyverse)
 devtools::load_all()
 ```
+
 
 ```{r cv, include=FALSE}
 cv <- get_online_cv()
@@ -43,7 +44,7 @@ Contact Info {#contact}
 --------------------------------------------------------------------------------
 
 - <i class="fa fa-envelope"></i> mattia.doro@gmail.com
-- <i class="fa fa-envelope"></i> mattia.doro@.unipd.it
+- <i class="fa fa-envelope"></i> mattia.doro@unipd.it
 <!-- - <i class="fa fa-globe"></i> [filippogambarota.xyz](https://filippogambarota.xyz/) -->
 
 ::: social
@@ -174,4 +175,5 @@ cv_data$other_academic %>%
   --main-width: calc(var(--content-width) - var(--sidebar-width));
   --decorator-horizontal-margin: 0.2in;
 }
+
 ```

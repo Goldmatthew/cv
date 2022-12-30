@@ -60,7 +60,7 @@ prepare_bib <- function(bib){
     authors <- stringr::str_split(bib$author, " and ")
     authors <- map_depth(authors, 2, get_author_surname)
     authors <- sapply(authors, function(x) paste(unlist(x), collapse = ", "))
-    authors <- str_replace_all(authors, "Gambarota", "**Gambarota**")
+    authors <- str_replace_all(authors, "Doro", "**Doro**")
     ref <- ifelse(!is.na(bib$doi), 
                   sprintf("%s [DOI: %s](%s)", bib$journal, bib$doi, bib$doi),
                   bib$journal)
@@ -69,7 +69,7 @@ prepare_bib <- function(bib){
     )
 }
 
-update_cv <- function(upload = FALSE){
+update_cv <- function(upload = FALSE){ 
     
     if(!file.exists("img/signature.png")){
         download_sign()
