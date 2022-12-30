@@ -2,7 +2,7 @@
 
 get_online_cv <- function(){
     file <- "data/data.xlsx"
-    cv <- "https://docs.google.com/spreadsheets/d/1pN3UQrkQePh-I__yMG0RNbiSCi8Fcml39NUyPR-ODxc/edit#gid=0"
+    cv <- "https://docs.google.com/spreadsheets/d/1hVyK8LqC0c03antzkewx9K5sidw6Sfx5/edit#gid=1080341057"
     googledrive::drive_download(cv, path = "data/data.xlsx", overwrite = TRUE)
     invisible(file)
 }
@@ -13,7 +13,7 @@ clean_cv_data <- function(data){
 }
 
 download_sign <- function(data){
-    link <- "https://drive.google.com/file/d/17LR6SesbcayTWmmRH3oRsQjLYZZ-n-Nf/view?usp=sharing"
+    link <- "https://drive.google.com/file/d/1SAxSjMblAUdM3zp6hflW_EI6rzD_XJIo/view?usp=share_link"
     googledrive::drive_download(link, path = "img/signature.png", overwrite = TRUE)
 }
 
