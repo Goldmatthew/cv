@@ -56,7 +56,7 @@ format_social(cv_data$links, 2) %>%
 Skills {#skills}
 --------------------------------------------------------------------------------
 
-- **Coding**: R, MATLAB, Vba, Python, GIT
+- **Coding**: R, MATLAB, VB, Python, GIT
 - **Markup**: Markdown, HTML, CSS
 - **Experiments**: E-Prime, PsychoPy
 - **EEG Analysis**: Brain Vision Analyzer, EEGLAB/ERPLAB, FieldTrip

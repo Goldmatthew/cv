@@ -2,7 +2,7 @@
 
 get_online_cv <- function(){
     file <- "data/data.xlsx"
-    cv <- "https://docs.google.com/spreadsheets/d/1pN3UQrkQePh-I__yMG0RNbiSCi8Fcml39NUyPR-ODxc/edit#gid=0"
+    cv <- "https://docs.google.com/spreadsheets/d/1hVyK8LqC0c03antzkewx9K5sidw6Sfx5/edit?usp=share_link&ouid=100256278049849905450&rtpof=true&sd=true"
     googledrive::drive_download(cv, path = "data/data.xlsx", overwrite = TRUE)
     invisible(file)
 }
@@ -60,7 +60,7 @@ prepare_bib <- function(bib){
     authors <- stringr::str_split(bib$author, " and ")
     authors <- map_depth(authors, 2, get_author_surname)
     authors <- sapply(authors, function(x) paste(unlist(x), collapse = ", "))
-    authors <- str_replace_all(authors, "Gambarota", "**Gambarota**")
+    authors <- str_replace_all(authors, "Doro", "**Doro**")
     ref <- ifelse(!is.na(bib$doi), 
                   sprintf("%s [DOI: %s](%s)", bib$journal, bib$doi, bib$doi),
                   bib$journal)
