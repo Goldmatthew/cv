@@ -7,7 +7,7 @@ output:
     self_contained: true
     css:
     - "style/resume.css"
-    - "https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+    # - "https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
 params:
   pdf_mode: FALSE 
   html_mode: TRUE
