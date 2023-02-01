@@ -8,9 +8,11 @@ output:
     css:
     - "style/resume.css"
     # - "https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+    # - "https://raw.githubusercontent.com/jpswalsh/academicons/master/css/academicons.min.css"
 params:
   pdf_mode: FALSE 
   html_mode: TRUE
+  which: "cv"
 ---
 
 
@@ -49,11 +51,14 @@ Contact Info {#contact}
 
 ::: social
 
-```{r social-links, results='asis'}
-format_social(cv_data$links, 2) %>% 
-    cat("-", .)
-```
+[`r icons::academicons("orcid")`](https://orcid.org/0000-0003-2574-4308)
+[`r icons::fontawesome("github")`](https://github.com/Goldmatthew)
+<!-- [`r icons::fontawesome("twitter")`](https://twitter.com/home) -->
+[`r icons::academicons("google-scholar-square")`](https://scholar.google.com/citations?user=cdS44IYAAAAJ&hl=it&oi=ao)
+<!-- [`r icons::academicons("osf")`](https://osf.io/gtpux/) -->
+
 :::
+
 
 Skills {#skills}
 --------------------------------------------------------------------------------

@@ -1,8 +1,13 @@
 # download the online cv using the googledrive package
 
-get_online_cv <- function(){
+get_online_cv <- function(which = c("cv", "temporary")){
+    which <- match.arg(which)
     file <- "data/data.xlsx"
-    cv <- "https://docs.google.com/spreadsheets/d/1hVyK8LqC0c03antzkewx9K5sidw6Sfx5/edit#gid=1080341057"
+    if(which == "cv"){
+        cv <- "https://docs.google.com/spreadsheets/d/1hVyK8LqC0c03antzkewx9K5sidw6Sfx5/edit#gid=1080341057"
+    } else{
+        cv <- "https://docs.google.com/spreadsheets/d/1hVyK8LqC0c03antzkewx9K5sidw6Sfx5/edit#gid=1080341057"
+    }
     googledrive::drive_download(cv, path = "data/data.xlsx", overwrite = TRUE)
     invisible(file)
 }
@@ -58,7 +63,7 @@ prepare_bib <- function(bib){
     title <- str_replace_all(title, "''", "'")
     date <- bib$year
     authors <- stringr::str_split(bib$author, " and ")
-    authors <- map_depth(authors, 2, get_author_surname)
+    authors <- purrr::map(authors, ~purrr::map(.x, get_author_surname))
     authors <- sapply(authors, function(x) paste(unlist(x), collapse = ", "))
     authors <- str_replace_all(authors, "Doro", "**Doro**")
     ref <- ifelse(!is.na(bib$doi), 
@@ -69,31 +74,45 @@ prepare_bib <- function(bib){
     )
 }
 
-update_cv <- function(upload = FALSE){ 
+update_cv <- function(which = "cv", upload = FALSE){
     
     if(!file.exists("img/signature.png")){
         download_sign()
     }
     
-    out_html <- rmarkdown::render("cv.Rmd", 
-                                  output_dir = "docs",
-                                  output_file = "index.html",
-                                  quiet = TRUE,
-                                  params = list(pdf_mode = FALSE,
-                                                html_mode = TRUE))
+    if(which == "cv"){
+        outname <- "index.html"
+        outname_pdf <- "docs/cv.pdf"
+        msg <- "CV updated! :)"
+    }else{
+        outname_pdf <- "docs/temp.pdf"
+        msg <- "temporary CV updated! :)"
+    }
+    
+    if(which == "cv"){
+        out_html <- rmarkdown::render("cv.Rmd", 
+                                      output_dir = "docs",
+                                      output_file = outname,
+                                      quiet = TRUE,
+                                      params = list(pdf_mode = FALSE,
+                                                    html_mode = TRUE,
+                                                    which = which))
+    }
     
     out_html_pdf <- rmarkdown::render("cv.Rmd", 
                                       output_dir = "docs", 
                                       output_file = "temp",
                                       quiet = TRUE,
                                       params = list(pdf_mode = TRUE,
-                                                    html_mode = FALSE))
+                                                    html_mode = FALSE,
+                                                    which = which))
     
-    pagedown::chrome_print(out_html_pdf, output = "docs/cv.pdf")
+    pagedown::chrome_print(out_html_pdf, output = outname_pdf)
     fs::file_delete(out_html_pdf)
-    cli::cli_alert_success("CV updated! :)")
     
-    if(upload){
+    cli::cli_alert_success(msg)
+    
+    if(upload & which == "cv"){
         gert::git_add(c("cv.Rmd", "docs/", "data/")) # adding
         gert::git_commit("updating cv")
         gert::git_push()
