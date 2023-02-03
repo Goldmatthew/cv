@@ -34,8 +34,7 @@ import_cv <- function(cv){
 # download the bib file with my publications
 
 get_publications <- function(){
-    # my_pubs <- "https://raw.githubusercontent.com/filippogambarota/fg-publications/main/fg-references.bib"
-    my_pubs <- "data/ref.bib"
+    my_pubs <- "https://raw.githubusercontent.com/Goldmatthew/cv/main/data/ref.bib"
     outfile <- "data/ref.bib"
     download.file(my_pubs, destfile = outfile, quiet = TRUE)
     invisible(outfile)
