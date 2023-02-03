@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 ![Github
-Pages](https://github.com/filippogambarota/cv/actions/workflows/pages/pages-build-deployment/badge.svg?branch=master)
+Pages](https://github.com/goldmatthew/cv/actions/workflows/pages/pages-build-deployment/badge.svg?branch=master)
 
 <!-- badges: end -->
 
