@@ -69,9 +69,22 @@ prepare_bib <- function(bib){
     ref <- ifelse(!is.na(bib$doi), 
                   sprintf("%s [DOI: %s](%s)", bib$journal, bib$doi, bib$doi),
                   bib$journal)
+    
+    
+    #
+    type <- bib$bibtype
+    # title <- c("(^1^: shared authorship)", title)
+    # date <- c("_", date)
+    # authors <- c("_", authors)
+    # ref <- c("_", ref)
+    #
+    shared <- grepl("1",authors)
+    authors[shared] <- paste(authors[shared], "(^1^: shared authorship)", sep = " ")
+    
     tibble(
-        type = bib$bibtype, title, authors, date, ref
+        type = type, title, authors, date, ref
     )
+    
 }
 
 update_cv <- function(which = "cv", upload = FALSE){

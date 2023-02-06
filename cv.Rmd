@@ -131,9 +131,16 @@ cv_data$training %>%
     format_all(format_edu)
 ```
 
-Papers
-<!-- (^1^: shared authorship) -->
+```{css}
+.papersnote{
+  font-size: 10px;
+  font-family: arial;
+}
+```
+
+Papers 
 --------------------------------------------------------------------------------
+
 
 ```{r publications, results='asis'}
 bib %>% 
