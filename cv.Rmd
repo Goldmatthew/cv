@@ -132,6 +132,7 @@ cv_data$training %>%
 ```
 
 Papers
+<!-- (^1^: shared authorship) -->
 --------------------------------------------------------------------------------
 
 ```{r publications, results='asis'}
