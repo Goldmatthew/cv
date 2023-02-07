@@ -11,6 +11,12 @@ format_edu <- function(data){
     }
 }
 
+format_collaborations <- function(data){
+    cat("### ", data$name, "\n\n")
+    cat()
+    
+}
+
 format_social <- function(data, size){
     pattern <- "<a href='%s'> <i class='%s-%sx'></i></a>"
     sprintf(pattern, data$link, data$icon, size)
