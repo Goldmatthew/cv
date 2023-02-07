@@ -172,10 +172,12 @@ cv_data$conferences %>%
 Reviewer activity {data-icon=laptop}
 --------------------------------------------------------------------------------
 
+
 ```{r reviewer, results='asis'}
 cv_data$reviewer %>%
     format_all(format_reviewer)
 ```
+
 
 Other Academic Experiences {data-icon=file}
 --------------------------------------------------------------------------------

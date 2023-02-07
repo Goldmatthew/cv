@@ -17,11 +17,11 @@ format_social <- function(data, size){
 }
 
 format_reviewer <- function(data){
-    cat("### ", journal[order(journal$journal),], "\n\n")
+    cat("### ", data$journal, "\n\n")
     cat("N/A", "\n\n")
     cat("N/A", "\n\n")
     cat("N/A", "\n\n")
-    cat("N/A", "\n\n")
+    # cat("N/A", "\n\n")
 }
 
 format_pub <- function(data){
