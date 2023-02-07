@@ -149,15 +149,15 @@ bib %>%
     format_all(format_pub)
 ```
 
-Preprints
---------------------------------------------------------------------------------
+<!-- Preprints -->
+<!-- -------------------------------------------------------------------------------- -->
 
-```{r preprints, results='asis'}
-bib %>% 
-    filter(type == "Unpublished") %>%  
-    arrange(desc(date)) %>% 
-    format_all(format_pub)
-```
+<!-- ```{r preprints, results='asis'} -->
+<!-- bib %>%  -->
+<!--     filter(type == "Unpublished") %>%   -->
+<!--     arrange(desc(date)) %>%  -->
+<!--     format_all(format_pub) -->
+<!-- ``` -->
 
 Conferences {data-icon=file}
 --------------------------------------------------------------------------------
@@ -167,6 +167,14 @@ cv_data$conferences %>%
     clean_cv_data() %>% 
     arrange(desc(date)) %>% 
     format_all(format_conf)
+```
+
+Reviewer activity {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+```{r reviewer, results='asis'}
+cv_data$reviewer %>%
+    format_all(format_reviewer)
 ```
 
 Other Academic Experiences {data-icon=file}

@@ -16,6 +16,14 @@ format_social <- function(data, size){
     sprintf(pattern, data$link, data$icon, size)
 }
 
+format_reviewer <- function(data){
+    cat("### ", journal[order(journal$journal),], "\n\n")
+    cat("N/A", "\n\n")
+    cat("N/A", "\n\n")
+    cat("N/A", "\n\n")
+    cat("N/A", "\n\n")
+}
+
 format_pub <- function(data){
     cat(data$title, "\n\n")
     cat(data$ref, "\n\n")
@@ -44,11 +52,11 @@ format_teaching <- function(data){
 }
 
 format_conf <- function(data){
-    authors <- str_replace_all(data$authors, "Gambarota", "**Gambarota**")
-    authors <- ifelse(startsWith(authors, "**Gambarota**"),
-                      str_replace_all(authors[startsWith(authors, "**Gambarota**")], 
-                                      pattern = "\\*\\*Gambarota\\*\\*", 
-                                      "\\*\\*Gambarota\\*\\* [presenter]"),
+    authors <- str_replace_all(data$authors, "Doro", "**Doro**")
+    authors <- ifelse(startsWith(authors, "**Doro**"),
+                      str_replace_all(authors[startsWith(authors, "**Doro**")], 
+                                      pattern = "\\*\\*Doro\\*\\*", 
+                                      "\\*\\*Doro\\*\\* [presenter]"),
                       authors)
     
     video <- ifelse(!is.na(data$link_talk), 
