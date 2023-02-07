@@ -179,10 +179,10 @@ cv_data$reviewer %>%
 ```
 
 
-Other Academic Experiences {data-icon=file}
+Collaborations {data-icon=file}
 --------------------------------------------------------------------------------
 
-```{r reviewer, results='asis'}
+```{r collaborations, results='asis'}
 cv_data$collaborations %>%
     format_all(format_collaborations)
 ```

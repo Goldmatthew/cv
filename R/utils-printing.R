@@ -11,12 +11,6 @@ format_edu <- function(data){
     }
 }
 
-format_collaborations <- function(data){
-    cat("### ", data$name, "\n\n")
-    cat()
-    
-}
-
 format_social <- function(data, size){
     pattern <- "<a href='%s'> <i class='%s-%sx'></i></a>"
     sprintf(pattern, data$link, data$icon, size)
@@ -29,6 +23,18 @@ format_reviewer <- function(data){
     cat("N/A", "\n\n")
     # cat("N/A", "\n\n")
 }
+
+format_collaborations <- function(data){
+    cat("### ", data$name, "\n\n")
+    cat(data$university, "\n\n")
+    cat("x", "\n\n")
+    # cat("y", "\n\n")
+    cat(data$duration, "\n\n")
+    # if(!is.na(data$details)){
+    #     cat(data$details, "\n\n")
+    # }
+}
+
 
 format_pub <- function(data){
     cat(data$title, "\n\n")
